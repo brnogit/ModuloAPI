@@ -14,7 +14,7 @@ namespace ModuloAPI.Context
             //recebe a conexão do banco e passa para o base
         }
 
-        public DbSet<Contato> Contatos { get; set; }
+        public DbSet<Contato> Contatos { get; set; } //representa tabela
         //entidade: classe no programa, e tabela no banco de dados
     }
 }
