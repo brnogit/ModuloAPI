@@ -29,3 +29,5 @@ namespace ModuloAPI.Controllers
         }
     }
 }
+
+// ContatoController responsavel por adicionar informações no banco de dados
