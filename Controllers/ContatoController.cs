@@ -20,6 +20,7 @@ namespace ModuloAPI.Controllers
             _context = context;
         }
 
+        #region Adiciona os dados
         [HttpPost]
         public IActionResult Create(Contato contato)
         {
@@ -27,7 +28,9 @@ namespace ModuloAPI.Controllers
             _context.SaveChanges();
             return Ok(contato);
         }
+        #endregion
 
+        #region Busca os dados
         [HttpGet("{id}")] //retorna o id do banco de dados
         public IActionResult ObterPorId(int id)
         {
@@ -40,8 +43,9 @@ namespace ModuloAPI.Controllers
 
             return Ok(contato);
         }
+        #endregion
 
-
+        #region Atualiza os dados
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Contato contato)// recebe dois parametros, um com ID do contato a ser atualizado. E o contato/JSON para poder atualizar as informações
         {
@@ -61,8 +65,9 @@ namespace ModuloAPI.Controllers
 
             return Ok(contatoBanco);
         }
+        #endregion
 
-
+        #region Delete
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
@@ -77,6 +82,7 @@ namespace ModuloAPI.Controllers
             _context.SaveChanges();
             return NoContent(); // retorno sem conteudo, nada pra retornar
         }
+        #endregion
     }
 }
 
