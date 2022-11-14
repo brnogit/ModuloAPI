@@ -15,7 +15,7 @@ namespace ModuloAPI.Controllers
         //atributo
         private readonly AgendaContext _context;
         //construtor para receber o context
-        public ContatoController(AgendaContext context)
+        public ContatoController(AgendaContext context) //injeção de dependencia
         {
             _context = context;
         }
@@ -26,7 +26,7 @@ namespace ModuloAPI.Controllers
         {
             _context.Add(contato);
             _context.SaveChanges();
-            return Ok(contato);
+            return CreatedAtAction(nameof(ObterPorId), new { id = contato.Id }, contato);
         }
         #endregion
 
